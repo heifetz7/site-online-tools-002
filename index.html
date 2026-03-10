@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具导航 - 极简现代风格</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #fafafa; color: #111; line-height: 1.5; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header */
+        header { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { color: #666; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #000; }
+        
+        /* Hero */
+        .hero { padding: 80px 0 60px; text-align: center; }
+        .hero h1 { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+        .hero p { font-size: 18px; color: #666; max-width: 500px; margin: 0 auto; }
+        
+        /* Search */
+        .search-bar { max-width: 600px; margin: 40px auto; position: relative; }
+        .search-bar input { width: 100%; padding: 16px 24px; border: 1px solid #ddd; border-radius: 100px; font-size: 16px; outline: none; transition: border-color 0.2s; }
+        .search-bar input:focus { border-color: #000; }
+        
+        /* Filters */
+        .filters { display: flex; gap: 12px; justify-content: center; margin-bottom: 48px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 20px; border: none; background: transparent; color: #666; font-size: 14px; font-weight: 500; cursor: pointer; border-radius: 100px; transition: all 0.2s; }
+        .filter-btn:hover { background: #f0f0f0; color: #000; }
+        .filter-btn.active { background: #000; color: #fff; }
+        
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding-bottom: 80px; }
+        
+        .card { background: #fff; border-radius: 16px; padding: 24px; transition: all 0.3s ease; border: 1px solid transparent; }
+        .card:hover { border-color: #ddd; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        
+        .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+        .card-icon.green { background: #dcfce7; }
+        .card-icon.purple { background: #f3e8ff; }
+        .card-icon.orange { background: #ffedd5; }
+        .card-icon.blue { background: #dbeafe; }
+        
+        .card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .card p { font-size: 14px; color: #666; line-height: 1.5; margin-bottom: 16px; }
+        
+        .card-meta { display: flex; align-items: center; justify-content: space-between; }
+        .card-tag { font-size: 12px; color: #666; background: #f5f5f5; padding: 4px 10px; border-radius: 100px; }
+        .card-price { font-size: 14px; font-weight: 600; color: #16a34a; }
+        
+        /* Footer */
+        footer { border-top: 1px solid #eee; padding: 40px 0; text-align: center; color: #999; font-size: 14px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">AI工具导航</div>
+                <div class="nav-links">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">分类</a>
+                    <a href="#">排行</a>
+                    <a href="#">关于</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>发现最好的 AI 工具</h1>
+            <p>精心筛选 300+ 人工智能工具，助你提升工作效率</p>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="搜索工具、类别或功能...">
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active">全部</button>
+                <button class="filter-btn">AI聊天</button>
+                <button class="filter-btn">AI绘画</button>
+                <button class="filter-btn">AI视频</button>
+                <button class="filter-btn">AI代码</button>
+                <button class="filter-btn">AI音频</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-icon green">🤖</div>
+                <h3>ChatGPT</h3>
+                <p>OpenAI 开发的 AI 聊天机器人，支持多种任务和对话</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI聊天</span>
+                    <span class="card-price">免费 / $20</span>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-icon purple">🎨</div>
+                <h3>Midjourney</h3>
+                <p>最强 AI 绘画工具，艺术风格独特，V6 版本大幅提升</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI绘画</span>
+                    <span class="card-price">$10起</span>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-icon orange">🎬</div>
+                <h3>Runway</h3>
+                <p>一站式 AI 视频创作，支持 Gen-2 生成和专业编辑</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI视频</span>
+                    <span class="card-price">免费 / $15</span>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-icon blue">💻</div>
+                <h3>GitHub Copilot</h3>
+                <p>最强 AI 代码助手，支持多种 IDE 和编程语言</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI代码</span>
+                    <span class="card-price">$10/月</span>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+                <div class="card-icon green">💬</div>
+                <h3>Claude</h3>
+                <p>Anthropic AI 助手，长文本处理和逻辑推理能力强</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI聊天</span>
+                    <span class="card-price">免费 / $20</span>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <div class="card-icon purple">🖼️</div>
+                <h3>Stable Diffusion</h3>
+                <p>开源 AI 绘画模型，可本地部署，社区生态丰富</p>
+                <div class="card-meta">
+                    <span class="card-tag">AI绘画</span>
+                    <span class="card-price">免费</span>
+                </div>
+            </article>
+
+            <!-- More cards... -->
+            <article class="card" style="opacity: 0.5;">
+                <div style="text-align: center; padding: 40px 0;">
+                    <p style="color: #999;">还有 294+ 个工具</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 AI工具导航. 精选 300+ 人工智能工具.</p>
+        </div>
+    </footer>
+</body>
+</html>
